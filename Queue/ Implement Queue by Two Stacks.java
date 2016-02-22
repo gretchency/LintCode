@@ -3,24 +3,26 @@ public class Queue {
     private Stack<Integer> stack2;
 
     public Queue() {
-       // do initialization if necessary
+       // stack2 is used to push elements
+       // stack1 is used to pop and peek
        stack1 = new Stack<Integer>();
        stack2 = new Stack<Integer>();
     }
     
     public void stack2ToStack1() {
+        //push the elements in stack2 to stack1 until stack2 is empty.
+        //So that the earlier element that pushed into stack 2 will be poped out first in stack1
+
         while (!stack2.isEmpty()) {
             stack1.push(stack2.pop());
         }
     }
     
     public void push(int element) {
-        // write your code here
         stack2.push(element);
     }
 
     public int pop() {
-        // write your code here
         if (stack1.isEmpty()) {
             this.stack2ToStack1();
         }
@@ -28,7 +30,6 @@ public class Queue {
     }
 
     public int top() {
-        // write your code here
         if (stack1.isEmpty()) {
             this.stack2ToStack1();
         }
