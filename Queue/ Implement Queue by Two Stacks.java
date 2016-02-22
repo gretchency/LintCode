@@ -1,3 +1,5 @@
+//use two stacks to implement a queue's actions.
+
 public class Queue {
     private Stack<Integer> stack1;
     private Stack<Integer> stack2;
